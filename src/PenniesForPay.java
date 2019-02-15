@@ -7,7 +7,8 @@ public class PenniesForPay {
     public static void main(String[] args) {
 
         Scanner keyboard = new Scanner(System.in);
-        double totalPay;
+        double totalPay = 0;
+        double currentPay;
         int daysWorked;
 
         System.out.println("Please type the number of days worked, followed by the enter key.");
@@ -19,10 +20,14 @@ public class PenniesForPay {
             daysWorked = keyboard.nextInt();
         }
 
-        //Print results
+        //Calculate and print results
+        System.out.println(""); //Skip a line
         for (int i = 1; i <= daysWorked; i++) {
-            totalPay = Math.pow(2, (i - 1));
-            System.out.println("Day " + i + ": Pay is " + totalPay);
+            currentPay = Math.pow(2, i - 1) / 100;
+            System.out.printf("Day %d: Today's pay is $%,.2f\n", i, currentPay);
+            totalPay += currentPay;
         }
+
+        System.out.printf("\nTotal Pay is $%,.2f", totalPay);
     }
 }
