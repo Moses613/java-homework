@@ -1,10 +1,15 @@
 import java.io.*;
 import java.util.Scanner;
 /** Homework #6 - World Series Champions
+ * Reports the number of times an inputted team has won the World Series
  * @author Moses613
  */
 public class Homework6 {
 
+    /** Reports the number of times an inputted team has won the World Series
+     * @param args
+     * @throws IOException
+     */
     public static void main(String[] args) throws IOException {
         int timesWon = 0;
         String[] array = createStringArray("src/WorldSeriesWinnersHwk6.txt");
@@ -49,6 +54,11 @@ public class Homework6 {
         return stringArray;
     }
 
+    /**Searches a string array for a specified string, and counts the number of occurrences
+     * @param array The String array to be searched
+     * @param team The String this method will search for
+     * @return The number of times the specified String was found
+     */
     public static int search(String[] array, String team) {
         int timesWon = 0;
 
