@@ -75,7 +75,8 @@ public class FracCalc
     {
         Fraction result = new Fraction();
         
-        lcdConverter(f1, f2);
+        lcdConverter(f1, f2); //Makes the two fractions addable
+
         result.setDenom(f1.getDenom());
         result.setNum(f1.getNum() + f2.getNum());
         result.reduce();  
@@ -85,10 +86,10 @@ public class FracCalc
     private Fraction subtract(Fraction f1, Fraction f2)
     {
         Fraction result = new Fraction();
-        
-        
-        // Subtract f1 by f2 and place result in result
-        // then return the Fration named result ( done for you 	  	   //at end)
+        lcdConverter(f1, f2); //Makes the two fractions subtractable
+
+        result.setDenom(f1.getDenom());
+        result.setNum(f1.getNum() - f2.getNum());
         result.reduce();  
         return result;
     }
@@ -96,9 +97,10 @@ public class FracCalc
     private Fraction multiply(Fraction f1, Fraction f2)
     {
         Fraction result = new Fraction();  
-        
-        // Multiply  f1 & f2 and place result in result
-        // then return the Fration named result ( done for you     	  // at end)result.reduce();  
+
+        result.setDenom(f1.getDenom() * f2.getDenom());
+        result.setNum(f1.getNum() * f2.getNum());
+        result.reduce();
         return result;
     }
     
@@ -106,9 +108,9 @@ public class FracCalc
     {
         Fraction result = new Fraction();
         
-        // Divide  f1 by f2 and place result in result
-        // then return the Fration named result ( done for you   	   // at end)
-        
+        f2.invert();
+        result.setDenom(f1.getDenom() * f2.getDenom());
+        result.setNum(f1.getNum() * f2.getNum());
         result.reduce();  
         return result;
     }
@@ -133,9 +135,9 @@ public class FracCalc
         f1.setNum(f1.getNum() * f2.getDenom());
         f2.setNum(f2.getNum() * f1.getDenom());
 
-        int lcd = f1.getDenom() * f2.getDenom(); //This techinically will not always be the LCD, but this suits the purpose
-        f1.setDenom(lcd);
-        f2.setDenom(lcd);
+        int lcd = f1.getDenom() * f2.getDenom(); //This will not always be the technical LCD, however the
+        f1.setDenom(lcd);                        // fractions will become addable, which is the real purpose
+        f2.setDenom(lcd);                        // of this method.
 
     }
 }                  

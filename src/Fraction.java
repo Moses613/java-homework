@@ -93,6 +93,6 @@ public class Fraction
     }
 
     public void print() {
-        System.out.println("Numerator = " + num + "\nDenominator = " + denom + "\n\n" + num + "/" + denom);
+        System.out.println("Numerator = " + num + "\nDenominator = " + denom + "\n" + num + "/" + denom + "\n");
     }
 }

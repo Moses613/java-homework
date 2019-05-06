@@ -6,7 +6,7 @@ public class FracMain
     {
 
            boolean newOne = true;
-           Fraction frac = new Fraction(2,5); //should be empty
+           Fraction frac = new Fraction(); //put something in this for bug testing
            FracCalc fcalc = new FracCalc();
             /*
            Fraction frac2 = new Fraction(2,5);
@@ -15,7 +15,8 @@ public class FracMain
            result = mixer.add(frac, frac2);
            frac.print();
            frac2.print();
-           */
+           result.print();
+            */
            // code will read Fractions to compute
 		while (fcalc.readEquation(newOne,frac))
            {
