@@ -1,7 +1,10 @@
 import java.io.IOException;
 import java.util.Scanner;
 
-public class FracCalc 
+/**
+ * Class with methods that operate on Fraction objects, as well as on input.
+ */
+public class FracCalc
 {
     
     Scanner console = new Scanner(System.in);
@@ -71,7 +74,7 @@ public class FracCalc
             
     }
        
-    public  Fraction add(Fraction f1, Fraction f2) //change to private
+    private  Fraction add(Fraction f1, Fraction f2) //change to private
     {
         Fraction result = new Fraction();
         
@@ -119,9 +122,24 @@ public class FracCalc
     {
         Fraction answer = new Fraction();
         
-        // Use an if..else if or a switch to check the operator
-        // and then call the appropriate method to compute the  	   // equation
-        // into answer.
+        switch (operator) {
+            case '+':
+                answer = add(frac1, frac2);
+                break;
+            case '-':
+                answer = subtract(frac1, frac2);
+                break;
+            case '*':
+                answer = multiply(frac1, frac2);
+                break;
+            case '/':
+                answer = divide(frac1, frac2);
+                break;
+            default:
+                //my ide wrote this for me, so i cant take credit for how cool it is
+                throw new IllegalStateException("Invalid operator: " + operator);
+        }
+            
         return answer;
     }
 

@@ -1,3 +1,7 @@
+/**
+ * Fraction class with fields for numerator and denominator,
+ * getters and setters, as well as some useful methods.
+ */
 public class Fraction
 {
     private int num,
